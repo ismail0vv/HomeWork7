@@ -1,15 +1,20 @@
 def binary_search(val, lst):
     l = 0
     r = len(lst)
+    found = False
     while l + 1 < r:
         m = int((l + r) / 2)
         if lst[m] == val:
             l = r = m
+            found = True
         elif lst[m] > val:
             r = m
         else:
             l = m + 1
-    return l
+    if found:
+        print(f'Элемент найден под индексом: {l}')
+    else:
+        print('Элемент не найден')
 
 
 def bubble_sort(lst):
