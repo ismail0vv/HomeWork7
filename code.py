@@ -1,0 +1,20 @@
+def binary_search(val, lst):
+    l = 0
+    r = len(lst)
+    while l + 1 < r:
+        m = int((l + r) / 2)
+        if lst[m] == val:
+            l = r = m
+        elif lst[m] > val:
+            r = m
+        else:
+            l = m + 1
+    return l
+
+
+def bubble_sort(lst):
+    for k in range(1, len(lst)):
+        for i in range(1, len(lst) - k + 1):
+            if lst[i] < lst[i - 1]:
+                lst[i - 1], lst[i] = lst[i], lst[i - 1]
+    return lst
